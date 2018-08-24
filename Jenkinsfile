@@ -20,7 +20,7 @@ pipeline {
         stage('Package') {
             steps {
                 echo 'Deploying....'
-		sh 'mvc -DskipTests package'
+		sh 'mvn -DskipTests package'
 		archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
